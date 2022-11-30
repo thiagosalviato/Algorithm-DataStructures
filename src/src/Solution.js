@@ -34,3 +34,89 @@ const addTwoNumbers = (l1, l2) => {
     if(carry) current.next = new ListNode(carry);
     return solution.next;
 };
+
+const lengthOfLongestSubstring = (s) => {
+    let map = {};
+    let maxLength = 0;
+    let start = 0;
+
+    for (let end = 0; end < s.length; end++) {
+        let lastChar = s[end];
+        if(map[lastChar] === undefined){
+            map[lastChar] = 0;
+        }
+        map[lastChar] += 1;
+        while (map[lastChar] > 1){
+            let firstChar = s[start];
+            map[firstChar] -= 1;
+            start += 1;
+        }
+        maxLength = Math.max(maxLength, end - start + 1)
+    }
+    return maxLength;
+};
+
+const lengthOfLongestSubstring = (s) => {
+    let haveCharMap = {};
+    let maxLength = 0;
+    let start = 0;
+
+    for (let end = 0; end < s.length; end++) {
+        let lastChar = s[end];
+        if(lastChar in haveCharMap){
+            start = Math.max(start,haveCharMap[lastChar] + 1);
+        }
+        haveCharMap[lastChar] = end;
+        maxLength = Math.max(maxLength, end - start + 1);
+    }
+    return maxLength;
+};
+
+const findMedianSortedArrays = (nums1, nums2) => {
+    let concat = nums1.concat(nums2);
+    concat = concat.sort(function (a,b){return a-b});
+    var length = concat.length;
+
+    if(length%2 === 1){
+        return concat[(length/2)-.5];
+    }else{
+        return (concat[(length/2)]+concat[(length/2)-1])/2;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
