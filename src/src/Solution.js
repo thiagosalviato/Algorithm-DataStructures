@@ -83,3 +83,68 @@ const findMedianSortedArrays = (nums1, nums2) => {
         return (concat[(length/2)]+concat[(length/2)-1])/2;
     }
 };
+
+const longestPalindrome = (s) => {
+    if(s.length < 1 || s === null) return "";
+
+    let longest = "";
+
+    for (let i = 0; i < s.length; i++) {
+        let addPalindrome = expandFromCenter(s,i,i);
+        let evenPalindrome = expandFromCenter(s,i-1,i);
+
+        if(addPalindrome.length > longest.length){
+            longest = addPalindrome;
+        }
+        if (evenPalindrome.length > longest.length){
+            longest = evenPalindrome;
+        }
+    }
+    return longest;
+};
+
+function expandFromCenter(s,left,right){
+    let i = 0;
+    while (s[left - i] && s[left - i] === s[right + i]){
+        i ++;
+    }
+    i--;
+
+    return s.slice(left - i, right + i + 1);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
