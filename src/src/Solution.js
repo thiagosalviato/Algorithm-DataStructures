@@ -75,7 +75,7 @@ const lengthOfLongestSubstring = (s) => {
 const findMedianSortedArrays = (nums1, nums2) => {
     let concat = nums1.concat(nums2);
     concat = concat.sort(function (a,b){return a-b});
-    var length = concat.length;
+    const length = concat.length;
 
     if(length%2 === 1){
         return concat[(length/2)-.5];
@@ -131,6 +131,17 @@ const convert = (s, numRows) => {
     return arr.join("");
 };
 
+const reverse = x => {
+    let y = Math.abs(x);
+    let result = 0;
+    while(y !== 0){
+        result = result * 10 + y % 10;
+        y = parseInt(y / 10);
+    }
+    x > 0 ? result = result : result = -result;
+    if(result > 2147483648 || result < -2147483649) return 0;
+    return result;
+};
 
 
 
