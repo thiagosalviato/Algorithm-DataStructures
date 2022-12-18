@@ -182,3 +182,55 @@ const myAtoi = s => {
     result *= sign
     return Math.min(Math.max(-(2 ** 31), result), 2**31 - 1)
 };
+
+const isPalindrome = x => {
+    let reversed = x.toString().split('').reverse().join('');
+    return (x.toString() === reversed);
+};
+
+const isPalindrome = x => {
+    let reversedStr = '';
+    let xStr = x.toString();
+
+    for (let i of xStr) {
+        reversedStr = i + reversedStr;
+    }
+    return(reversedStr === xStr)
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
