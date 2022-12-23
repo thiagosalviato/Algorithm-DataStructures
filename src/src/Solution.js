@@ -56,7 +56,7 @@ const lengthOfLongestSubstring = (s) => {
     return maxLength;
 };
 
-const lengthOfLongestSubstring = (s) => {
+const lengthOfLongestSubstring2 = (s) => {
     let haveCharMap = {};
     let maxLength = 0;
     let start = 0;
@@ -188,7 +188,7 @@ const isPalindrome = x => {
     return (x.toString() === reversed);
 };
 
-const isPalindrome = x => {
+const isPalindrome2 = x => {
     let reversedStr = '';
     let xStr = x.toString();
 
@@ -196,5 +196,32 @@ const isPalindrome = x => {
         reversedStr = i + reversedStr;
     }
     return(reversedStr === xStr)
+};
+
+const isMatch = (s, p) =>{
+    const check = (s, p, i, j) => {
+        if (j > p.length - 1) {
+          return i > s.length - 1;
+        }
+        
+        const isNextQuantiyModifier = p[j + 1] === '*';
+        
+        if (!isNextQuantiyModifier) {
+          if ([s[i], '.'].includes(p[j])) {
+            return i < s.length && check(s, p, i + 1, j + 1);
+          } else {
+            return false;
+          }
+        } else {
+          if ([s[i], '.'].includes(p[j])) {
+            return check(s, p, i, j + 2) || (i < s.length && check(s, p, i + 1, j));
+          } else {
+            return check(s, p, i, j + 2);
+          }
+        }
+        
+      }
+      
+      return check(s, p, 0, 0);
 };
 
