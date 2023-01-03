@@ -225,3 +225,6 @@ const isMatch = (s, p) =>{
       return check(s, p, 0, 0);
 };
 
+const maxArea = height =>{
+    
+};
