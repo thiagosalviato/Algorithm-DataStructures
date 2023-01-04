@@ -114,4 +114,21 @@ public class Solution {
     private boolean match(char a, char b){
         return a == b || b == '.';
     }
+
+    public int maxArea(int[] height) {
+        int maxAreaBetween = 0;
+        int firstPointer = 0;
+        int secondPointer = height.length-1;
+
+        while (firstPointer < secondPointer) {
+            if(height[firstPointer] < height[secondPointer]){
+                maxAreaBetween = Math.max(maxAreaBetween, height[firstPointer] * (secondPointer-firstPointer));
+                firstPointer += 1;
+            }else{
+                maxAreaBetween = Math.max(maxAreaBetween, height[secondPointer] * (secondPointer-firstPointer));
+                secondPointer -= 1;
+            }
+        }
+        return maxAreaBetween;
+    }
 }

@@ -225,6 +225,51 @@ const isMatch = (s, p) =>{
       return check(s, p, 0, 0);
 };
 
-const maxArea = height =>{
-    
+const maxArea2 = height =>{
+    let firstMax = 0;
+    let secondMax = 0;
+    let firstMaxPosition;
+    let secondMaxPosition;
+
+    for (let i = 0; i < height.length; i++) {
+        if(firstMax < height[i]){
+            firstMax = height[i];
+        }
+        if(height.length == i + 1){
+            firstMaxPosition = height.indexOf(firstMax);
+            for (let i = 0; i < height.length; i++) {
+                if(secondMax < height[i] && i != firstMaxPosition){
+                    secondMax = height[i];
+                }
+                if(height.length == i + 1){
+                    secondMaxPosition = height.indexOf(secondMax);
+                    if(secondMaxPosition > firstMaxPosition){
+                        let maxAreaBetween = secondMaxPosition * (secondMaxPosition - firstMaxPosition);
+                        return maxAreaBetween;
+                    }else if(secondMaxPosition > firstMaxPosition){
+                        let maxAreaBetween = firstMaxPosition * (secondMaxPosition - firstMaxPosition);
+                        return maxAreaBetween;
+                    }
+                }
+            }
+        } 
+    }
 };
+
+const maxArea = (height) => {
+    let firstMax = 0;
+    let secondMax = height.length - 1;
+    let maxAreaBetween = 0;
+
+    while(firstMax < secondMax) {
+        maxAreaBetween = Math.max(maxAreaBetween, 
+                                   Math.min(height[secondMax], height [firstMax]) * (secondMax - firstMax) );
+        if(height[firstMax] < height[secondMax]) {
+            firstMax++;
+        } else {
+            secondMax--;
+        }
+    }
+    return maxAreaBetween;
+}
+
