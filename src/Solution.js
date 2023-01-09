@@ -300,3 +300,17 @@ const romanToInt = (s) =>{
     }
     return value;
 };
+
+const longestCommonPrefix = (strs) =>{
+    let prefix = '';
+    if (strs.length === 1) return strs[0];
+    for (let i = 0; i < strs[0].length; i++) {
+        let char = strs[0][i];
+        if (char && strs.every((s) => s[i] == char)) {
+            prefix += char;
+        } else {
+            return prefix;
+        }
+    }
+    return prefix;
+};
