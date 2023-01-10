@@ -314,3 +314,53 @@ const longestCommonPrefix = (strs) =>{
     }
     return prefix;
 };
+
+const threeSum2 = (nums) => {
+    nums.sort((a,b)=>a-b);
+    const values = [];
+    for (let i = 0; i < nums.length; i++) {
+        if(i>0 && nums[i] == nums[i-1]){
+            continue;
+        }
+        for (let ic = i + 1; ic < nums.length; ic++) {
+            if(ic>i+1 && nums[ic] == nums[ic-1]){
+                continue;
+            }
+            for (let j = ic + 1; j < nums.length; j++) {
+                if(j>ic+1 && nums[j] == nums[j-1]){
+                    continue;
+                }
+                if(nums[i] + nums[ic] + nums[j] == 0){
+                    values.push([nums[i],nums[ic],nums[j]])
+                }
+            }
+        }
+    }
+    return values;
+};
+
+const threeSum = (nums) => {
+    nums.sort((a,b)=>a-b);
+    const values = [];
+    for (let i = 0; i < nums.length; i++) {
+        if(i>0 && nums[i] === nums[i-1]) continue;
+        const targetValue = 0 - nums[i];
+        let leftValue = i + 1;
+        let rightValue = nums.length - 1;
+        while (rightValue > leftValue){
+            const sum = nums[leftValue] + nums[rightValue];
+            if(sum > targetValue){
+                rightValue--;
+            }else if(sum < targetValue){
+                leftValue++;
+            }else{
+                values.push([nums[i],nums[leftValue],nums[rightValue]]);
+                while (nums[leftValue] === nums[leftValue + 1]) leftValue++;
+                while (nums[rightValue] === nums[rightValue - 1]) rightValue--;
+                leftValue++;
+                rightValue--;
+            }
+        }
+    }
+    return values;
+};
