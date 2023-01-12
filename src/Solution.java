@@ -198,6 +198,30 @@ public class Solution {
     }
 
     public List<List<Integer>> threeSum(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> result_arr = new LinkedList();
 
+        for (int i = 0; i < nums.length-2; i++) {
+            if(i == 0 || (i>0 && nums[i] != nums[i-1])){
+                int lowerValue = i+1;
+                int higherValue = nums.length-1;
+                int sum = 0-nums[i];
+
+                while (lowerValue < higherValue){
+                    if(nums[lowerValue] + nums[higherValue] == sum){
+                        result_arr.add(Arrays.asList(nums[i], nums[lowerValue], nums[higherValue]));
+                        while (lowerValue < higherValue && nums[lowerValue] == nums[lowerValue+1]) lowerValue++;
+                        while (lowerValue < higherValue && nums[higherValue] == nums[higherValue+1]) higherValue--;
+                        lowerValue++;
+                        higherValue--;
+                    }else if(nums[lowerValue] + nums[higherValue] > sum){
+                        higherValue--;
+                    }else{
+                        lowerValue++;
+                    }
+                }
+            }
+        }
+        return result_arr;
     }
 }
