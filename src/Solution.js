@@ -364,3 +364,23 @@ const threeSum = (nums) => {
     }
     return values;
 };
+
+const threeSumClosest = (nums, target) => {
+    nums = nums.sort((a, b) => a - b);
+    let result = Infinity;
+
+    for (let i = 0; i < nums.length-2; i++) {
+        let left = i+1;
+        let right = nums.length-1;
+        while (left < right){
+            let sum = nums[i] + nums[left] + nums[right];
+            if (Math.abs(sum - target) < Math.abs(result - target)) result = sum;
+            if (sum > target){
+                right--;
+            }else{
+                left++;
+            }
+        }
+    }
+    return result;
+};
