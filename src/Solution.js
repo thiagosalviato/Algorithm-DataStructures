@@ -431,11 +431,31 @@ const letterCombinations = (digits) => {
 };
 
 const fourSum = (nums, target) => {
-    nums = nums.sort((a, b) => a - b);
-    let result = Infinity;
+    nums.sort((a, b) => a - b);
+    const result = []
 
-    for (let i = 0; i < nums.length; i++) {
+    for(let i = 0; i < nums.length - 3; i++) {
+        for(let j = i + 1; j < nums.length - 2; j++) {
+            let lower = j + 1;
+            let higher = nums.length - 1;
 
+            while(lower < higher) {
+                const sum = nums[i] + nums[j] + nums[lower] + nums[higher];
+                if(sum === target) {
+                    result.push([nums[i], nums[j], nums[lower], nums[higher]])
+                    while(nums[lower] === nums[lower + 1]) lower++;
+                    while(nums[higher] === nums[higher - 1]) higher--;
+                    lower++;
+                    higher--;
+                } else if(sum < target) {
+                    lower++;
+                } else {
+                    higher--;
+                }
+            }
+            while(nums[j] === nums[j + 1]) j++;
+        }
+        while(nums[i] === nums[i + 1]) i++;
     }
-    return result;
+    return result
 };
