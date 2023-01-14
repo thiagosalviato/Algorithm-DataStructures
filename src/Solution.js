@@ -385,7 +385,7 @@ const threeSumClosest = (nums, target) => {
     return result;
 };
 
-const letterCombinations = (digits) => {
+const letterCombinations2 = (digits) => {
     if (!digits) return [];
     let letters = [0,1,['a','b','c'],['d','e','f'],['g','h','i'],['j','k','l'],['m','n','o'],['p','q','r','s'],['t','u','x'],['w','x','y','z']];
     let possibilities = [''];
@@ -393,9 +393,49 @@ const letterCombinations = (digits) => {
     for(let digit of digits){
         let currentPossibility = [];
         for (let letter of letters[+digit]){
-            currentPossibility.forEach((word) => currentPossibility.push(word+letter));
+            currentPossibility = currentPossibility.concat(possibilities.map(word => word + letter));
         }
         possibilities = currentPossibility;
     }
     return possibilities;
+};
+
+
+const letterCombinations = (digits) => {
+    if (!digits) return [];
+
+    const alphabet = {
+        2: ['a', 'b', 'c'],
+        3: ['d', 'e', 'f'],
+        4: ['g', 'h', 'i'],
+        5: ['j', 'k', 'l'],
+        6: ['m', 'n', 'o'],
+        7: ['p', 'q', 'r', 's'],
+        8: ['t', 'u', 'v'],
+        9: ['w', 'x', 'y', 'z']
+    };
+    const result = [];
+    const combination = (str, digitsInUse) => {
+        if (digitsInUse == digits.length) {
+            result.push(str);
+            return;
+        }
+        const letters = alphabet[digits[digitsInUse]];
+        for (const letter of letters) {
+            combination(str + letter, digitsInUse + 1);
+        }
+    }
+
+    combination('', 0);
+    return result;
+};
+
+const fourSum = (nums, target) => {
+    nums = nums.sort((a, b) => a - b);
+    let result = Infinity;
+
+    for (let i = 0; i < nums.length; i++) {
+
+    }
+    return result;
 };

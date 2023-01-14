@@ -247,4 +247,27 @@ public class Solution {
         }
         return result;
     }
+
+    List<String> result = null;
+    String[] mapping = new String[]{"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+    public List<String> letterCombinations(String digits) {
+        result = new ArrayList<>();
+        if(digits.length()==0) return result;
+        generatePossibilities(0,digits,new StringBuilder());
+        return result;
+    }
+
+    void generatePossibilities(int length, String digits, StringBuilder currentPossibility){
+        if(length == digits.length()){
+            result.add(currentPossibility.toString());
+            return;
+        }
+        char ch = digits.charAt(length);
+        String str = mapping[ch-'0'];
+        for (char c:str.toCharArray()){
+            currentPossibility.append(c);
+            generatePossibilities(length+1,digits,currentPossibility);
+            currentPossibility.deleteCharAt(currentPossibility.length()-1);
+        }
+    }
 }
