@@ -384,3 +384,18 @@ const threeSumClosest = (nums, target) => {
     }
     return result;
 };
+
+const letterCombinations = (digits) => {
+    if (!digits) return [];
+    let possibilities = [''];
+    let letters = [0,1,['a','b','c'],['d','e','f'],['g','h','i'],['j','k','l'],['m','n','o'],['p','q','r','s'],['t','u','x'],['w','x','y','z']];
+
+    for(let digit of digits){
+        let currentPossibility = [];
+        for (let letter of letters[+digit]){
+            currentPossibility.forEach((word) => currentPossibility.push(word+letter));
+        }
+        possibilities = currentPossibility;
+    }
+    return possibilities;
+};
