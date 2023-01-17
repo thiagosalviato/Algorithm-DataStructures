@@ -459,3 +459,14 @@ const fourSum = (nums, target) => {
     }
     return result
 };
+
+const removeNthFromEnd = (head, n) => {
+    const result = [];
+
+    for (let i = 0; i < head.length; i++) {
+        if(i != parseInt(n) + 1){
+            result.push(head[i]);
+        }
+    }
+    return result;
+};
