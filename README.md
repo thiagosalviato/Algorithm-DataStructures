@@ -37,3 +37,5 @@
 [17. Letter Combinations of a Phone Number](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/17.%20Letter%20Combinations%20of%20a%20Phone%20Number.md)
 
 [18. 4Sum](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/18.4Sum.md)
+
+[19. Remove Nth Node From End of List](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/19.%20Remove%20Nth%20Node%20From%20End%20of%20List.md)
