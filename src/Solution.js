@@ -461,12 +461,24 @@ const fourSum = (nums, target) => {
 };
 
 const removeNthFromEnd = (head, n) => {
-    const result = [];
+    let list = new ListNode(0);
+    list.next = head;
+    let slow = list;
+    let fast = list;
 
-    for (let i = 0; i < head.length; i++) {
-        if(i != parseInt(n) + 1){
-            result.push(head[i]);
-        }
+    for (let i = 0; i <= n; i++) {
+        fast = fast.next;
     }
-    return result;
+
+    while (fast) {
+        slow = slow.next;
+        fast = fast.next;
+    }
+
+    slow.next = slow.next.next;
+    return list.next;
+};
+
+const isValid = (s) => {
+
 };
