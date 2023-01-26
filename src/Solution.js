@@ -480,5 +480,4 @@ const removeNthFromEnd = (head, n) => {
 };
 
 const isValid = (s) => {
-
 };
