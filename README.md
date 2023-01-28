@@ -39,3 +39,5 @@
 [18. 4Sum](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/18.4Sum.md)
 
 [19. Remove Nth Node From End of List](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/19.%20Remove%20Nth%20Node%20From%20End%20of%20List.md)
+
+[20. Valid Parentheses](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/20.%20Valid%20Parentheses.md)
