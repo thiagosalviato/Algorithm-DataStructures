@@ -479,5 +479,15 @@ const removeNthFromEnd = (head, n) => {
     return list.next;
 };
 
-const isValid = (s) => {
+const mergeTwoLists = (list1, list2) => {
+    let totalList = [];
+    for (let i = 0; i < list1.length; i++) {
+        totalList.push(list1[i]);
+    }
+    for (let i = 0; i < list2; i++) {
+        totalList.push(list2[i]);
+    }
+
+    totalList.sort((a,b)=> a - b);
+    return totalList;
 };
