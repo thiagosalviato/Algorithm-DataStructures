@@ -480,14 +480,11 @@ const removeNthFromEnd = (head, n) => {
 };
 
 const mergeTwoLists = (list1, list2) => {
-    let totalList = [];
-    for (let i = 0; i < list1.length; i++) {
-        totalList.push(list1[i]);
+    if(!list1 || !list2) return list1 || list2;
+    if(list1.val < list2.val){
+        list1.next = mergeTwoLists(list1.next, list2);
+        return list1;
     }
-    for (let i = 0; i < list2; i++) {
-        totalList.push(list2[i]);
-    }
-
-    totalList.sort((a,b)=> a - b);
-    return totalList;
+    list2.next = mergeTwoLists(list1, list2.next);
+    return list2;
 };
