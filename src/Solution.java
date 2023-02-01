@@ -290,6 +290,7 @@ public class Solution {
         }
 
         slow.next = slow.next.next;
+
         return list.next;
     }
 
