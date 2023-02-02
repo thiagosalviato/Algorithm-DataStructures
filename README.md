@@ -44,4 +44,4 @@
 
 [21. Merge Two Sorted Lists](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/21.%20Merge%20Two%20Sorted%20Lists.md)
 
-[22. Generate Parentheses](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/21.%20Merge%20Two%20Sorted%20Lists.md)
+[22. Generate Parentheses](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/22.Generate%20Parentheses.md)
