@@ -488,3 +488,15 @@ const mergeTwoLists = (list1, list2) => {
     list2.next = mergeTwoLists(list1, list2.next);
     return list2;
 };
+
+const generateParenthesis = (n) => {
+    let parenthesisArray = [];
+    getTogether(n, n, '');
+
+    function getTogether(left, right, str) {
+        if (!left && !right && str.length) return parenthesisArray.push(str);
+        if (left) getTogether(left - 1, right, str + '(');
+        if (right > left) getTogether(left, right - 1, str + ')');
+    }
+    return parenthesisArray;
+};

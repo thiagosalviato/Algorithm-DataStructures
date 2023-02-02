@@ -321,4 +321,18 @@ public class Solution {
             return list2;
         }
     }
+
+    public List<String> generateParenthesis(int n) {
+        List<String> parenthesisArray = new ArrayList<>();
+        getTogether(n, n, parenthesisArray, "");
+        return parenthesisArray;
+    }
+
+    private void getTogether(int left, int right, List<String> parenthesisArray, String s) {
+        if (left == 0 && right == 0) parenthesisArray.add(s);
+        else {
+            if (left > 0) getTogether(left - 1, right, parenthesisArray, s + "(");
+            if (right > left) getTogether(left, right - 1, parenthesisArray, s + ")");
+        }
+    }
 }
