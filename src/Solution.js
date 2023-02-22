@@ -500,3 +500,23 @@ const generateParenthesis = (n) => {
     }
     return parenthesisArray;
 };
+
+const mergeKLists = (lists) => {
+    const k = lists.length;
+    let minimum = lists[0], minimumIndex = 0;
+
+    for (let i = 0; i < k; i++) {
+        if (!minimum || (lists[i] && minimum.val > lists[i].val)) {
+            minimum = lists[i];
+            minimumIndex = i;
+        }
+    }
+
+    if (!lists[minimumIndex]) {
+        return null;
+    }
+
+    lists[minimumIndex] = lists[minimumIndex].next;
+    minimum.next = mergeKLists(lists);
+    return minimum;
+};
