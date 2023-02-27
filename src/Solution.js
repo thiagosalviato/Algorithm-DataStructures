@@ -520,3 +520,13 @@ const mergeKLists = (lists) => {
     minimum.next = mergeKLists(lists);
     return minimum;
 };
+
+const swapPairs = (head) => {
+    if(!head || !head.next){
+        return head;
+    }
+    let n1 = head, n2 = head.next, n3 = n2.next;
+    n2.next = n1;
+    n1.next = swapPairs(n3);
+    return n2;
+};

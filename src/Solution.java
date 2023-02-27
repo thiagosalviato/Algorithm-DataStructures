@@ -335,4 +335,19 @@ public class Solution {
             if (right > left) getTogether(left, right - 1, parenthesisArray, s + ")");
         }
     }
+
+    public ListNode swapPairs(ListNode head) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode point = dummy;
+        while(point.next != null && point.next.next != null){
+            ListNode n1 = point.next;
+            ListNode n2 = point.next.next;
+            point.next = n2;
+            n1.next = n2.next;
+            n2.next = n1;
+            point = n1;
+        }
+        return dummy.next;
+    }
 }
