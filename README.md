@@ -45,3 +45,7 @@
 [21. Merge Two Sorted Lists](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/21.%20Merge%20Two%20Sorted%20Lists.md)
 
 [22. Generate Parentheses](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/22.Generate%20Parentheses.md)
+
+[23. Merge k Sorted Lists](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/23.%20Merge%20k%20Sorted%20Lists.md)
+
+[24.Swap Nodes in Pairs](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/24.Swap%20Nodes%20in%20Pairs.md)
