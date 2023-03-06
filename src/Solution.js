@@ -530,3 +530,20 @@ const swapPairs = (head) => {
     n1.next = swapPairs(n3);
     return n2;
 };
+
+const swapPairs2 = (head) => {
+    if (!head || !head.next) {
+        return head;
+    }
+    let curr = head;
+    while (curr && curr.next) {
+        let nextVal = curr.next.val;
+
+        curr.next.val = curr.val;
+        curr.val = nextVal;
+
+        curr = curr.next.next;
+    }
+    return head;
+};
+
