@@ -365,4 +365,34 @@ public class Solution {
         }
         return head;
     }
+
+    public ListNode reverseKGroup(ListNode head, int k) {
+        ListNode node = head;
+        int size = 0;
+        while (node != null) {
+            node = node.next;
+            size++;
+        }
+        int iterations = (size / k) - 1;
+
+        ListNode middleNode = new ListNode(-1, head);
+        ListNode currentHead = middleNode;
+        ListNode result = null;
+        int i = 0;
+        while(i <= iterations) {
+            currentHead = currentHead.next;
+            for (int j = 1; j < k; j++) {
+                ListNode temp = currentHead.next;
+                currentHead.next = temp.next;
+                temp.next = middleNode.next;;
+                middleNode.next = temp;
+            }
+            if (i == 0)
+                result = middleNode.next;
+            middleNode = currentHead;
+            i++;
+        }
+
+        return result;
+    }
 }
