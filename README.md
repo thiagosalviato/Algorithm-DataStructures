@@ -49,3 +49,5 @@
 [23. Merge k Sorted Lists](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/23.%20Merge%20k%20Sorted%20Lists.md)
 
 [24.Swap Nodes in Pairs](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/24.Swap%20Nodes%20in%20Pairs.md)
+
+[25.Reverse Nodes in k-Group](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/25.Reverse%20Nodes%20in%20k-Group.md)
