@@ -553,12 +553,12 @@ const countOdds = (low, high) => {
 };
 
 const average = (salary) => {
-    let maximumSalary = Math.max(...salary)
-    let minimumSalary = Math.min(...salary)
-    let totalSalary = salary.reduce((a,b) => a + b)
+    let maximumSalary = Math.max(...salary);
+    let minimumSalary = Math.min(...salary);
+    let totalSalary = salary.reduce((a,b) => a + b);
 
     totalSalary -= maximumSalary;
-    totalSalary -= minimumSalary
+    totalSalary -= minimumSalary;
 
     return totalSalary / (salary.length - 2);
 };
