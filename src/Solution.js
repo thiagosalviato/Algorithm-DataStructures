@@ -547,3 +547,18 @@ const swapPairs2 = (head) => {
     return head;
 };
 
+const countOdds = (low, high) => {
+    let oddNumbers = Math.round((high-low) / 2);//
+    return low % 2 === 1 && high % 2 === 1 ? oddNumbers+1 : oddNumbers;
+};
+
+const average = (salary) => {
+    let maximumSalary = Math.max(...salary)
+    let minimumSalary = Math.min(...salary)
+    let totalSalary = salary.reduce((a,b) => a + b)
+
+    totalSalary -= maximumSalary;
+    totalSalary -= minimumSalary
+
+    return totalSalary / (salary.length - 2);
+};
