@@ -404,4 +404,22 @@ public class Solution {
             return numbers/2;
         }
     }
+
+    public double average(int[] salary) {
+        double salarySum=0;
+        double maximumSalary=0;
+        double minimumSalary=Integer.MAX_VALUE;
+
+        for(int i=0;i<salary.length;i++){
+            salarySum+=salary[i];
+            if(maximumSalary<salary[i]){
+                maximumSalary=salary[i];
+            }
+            if(minimumSalary>salary[i]){
+                minimumSalary=salary[i];
+            }
+        }
+
+        return (double)((salarySum-minimumSalary-maximumSalary)/(double)(salary.length-2.0));
+    }
 }

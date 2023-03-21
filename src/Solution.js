@@ -562,3 +562,11 @@ const average = (salary) => {
 
     return totalSalary / (salary.length - 2);
 };
+
+const hammingWeight = (n) => {
+    let numberBits = 0;
+    for (const c of n) {
+        numberBits  += 1;
+    }
+    return numberBits;
+};
