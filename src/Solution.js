@@ -594,3 +594,7 @@ const largestPerimeter = (nums) =>{
     }
     return 0;
 };
+
+const nearestValidPoint = (x, y, points) => {
+
+};
