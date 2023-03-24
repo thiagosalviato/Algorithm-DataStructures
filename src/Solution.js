@@ -570,3 +570,27 @@ const hammingWeight = (n) => {
     }
     return numberBits;
 };
+
+const subtractProductAndSum = (n) => {
+    const digits = n.toString();
+    let sum = 0;
+    let product = 1;
+    for (const digit of digits) {
+        sum += Number(digit);
+        product *= Number(digit);
+    }
+    return product - sum;
+}
+
+const largestPerimeter = (nums) =>{
+    nums = nums.sort((a,b) => {
+        return b - a;
+    });
+
+    for (let i = 0; i < nums.length - 2; i++) {
+        if(nums[i] < nums[i+1] + nums[i+2]){
+            return nums[i] + nums[i+1] + nums[i+2];
+        }
+    }
+    return 0;
+};

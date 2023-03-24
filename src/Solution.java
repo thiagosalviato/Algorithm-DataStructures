@@ -422,4 +422,28 @@ public class Solution {
 
         return (double)((salarySum-minimumSalary-maximumSalary)/(double)(salary.length-2.0));
     }
+
+    public int subtractProductAndSum(int n){
+        int sum = 0;
+        int product = 1;
+
+        while(n > 0){
+            sum += (n % 10);
+            product *= (n % 10);
+            n /= 10;
+        }
+
+        return product - sum;
+    }
+
+    public int largestPerimeter(int[] nums) {
+        Arrays.sort(nums);
+        for(int i = nums.length-1; i>1; i--){
+            if(nums[i] < nums[i-1] + nums[i-2]){
+                return  nums[i] + nums[i-1]+ nums[i-2];
+            }
+        }
+        return 0;
+    }
+}
 }
