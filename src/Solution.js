@@ -596,5 +596,18 @@ const largestPerimeter = (nums) =>{
 };
 
 const nearestValidPoint = (x, y, points) => {
+    let nearest = Infinity;
+    let index = -1;
+    points.forEach(([pointsX, pointsY], i)=>{
+        if(pointsX!==x && pointsY !== y) return
 
+        const dx = Math.abs(pointsX-x);
+        const dy = Math.abs(pointsY-y);
+
+        if( dx + dy < nearest) {
+            nearest = dx+dy;
+            index = i;
+        }
+    });
+    return index;
 };
