@@ -611,3 +611,49 @@ const nearestValidPoint = (x, y, points) => {
     });
     return index;
 };
+
+const arraySign = (nums) => {
+    let product = 1;
+    nums = nums.sort((a, b) => b - a);
+    if (nums.includes(0)) {
+        return 0;
+    } else {
+        let product = nums.reduce((acc, cur) => acc * cur, 1);
+        return signFunc(product);
+    }
+};
+
+const signFunc = (product) => {
+    if (product === 0) {
+        return 0;
+    } else if (product > 0) {
+        return 1;
+    } else {
+        return -1;
+    }
+};
+
+const arraySign2 = (nums) => {
+    let negativeCount = nums.filter(num => num < 0).length;
+    if (nums.includes(0)) {
+        return 0;
+    } else {
+        let product = nums.reduce((acc, cur) => acc * cur, 1);
+        return negativeCount % 2 == 0 ? 1 : -1;
+    }
+};
+
+const signFunc2 = (product) => {
+    return product === 0 ? 0 : product > 0 ? 1 : -1;
+};
+
+const canMakeArithmeticProgression = (arr) => {
+    arr.sort((a, b) => a - b);
+    const diff = arr[1] - arr[0];
+    for (let i = 2; i < arr.length; i++) {
+        if (arr[i] - arr[i - 1] !== diff) {
+            return false;
+        }
+    }
+    return true;
+};
