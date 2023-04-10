@@ -657,3 +657,21 @@ const canMakeArithmeticProgression = (arr) => {
     }
     return true;
 };
+
+const isHappy = (n) => {
+    let seen = new Set();
+    while (n !== 1) {
+        let sum = 0;
+        while (n > 0) {
+            let numberDigit = n % 10;
+            sum += numberDigit * numberDigit;
+            n = Math.floor(n / 10);
+        }
+        if (seen.has(sum)) {
+            return false;
+        }
+        seen.add(sum);
+        n = sum;
+    }
+    return true;
+};

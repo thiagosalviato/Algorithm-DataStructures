@@ -463,4 +463,19 @@ public class Solution {
         return n == 0 ? 0 : n < 0 ? -1 : 1;
     }
 
+    public boolean isHappy(int n) {
+        Set<Integer> seen = new HashSet<>();
+        while (n != 1 && !seen.contains(n)) {
+            seen.add(n);
+            int sum = 0;
+            while (n > 0) {
+                int numberDigit = n % 10;
+                sum += numberDigit * numberDigit;
+                n /= 10;
+            }
+            n = sum;
+        }
+        return n == 1;
+    }
+
 }
