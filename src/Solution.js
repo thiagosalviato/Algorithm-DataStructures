@@ -675,3 +675,45 @@ const isHappy = (n) => {
     }
     return true;
 };
+
+const nextGreaterElement = (findNums, nums) => {
+    let stack = [];
+    let nextGreaterMap = new Map();
+
+    nums.forEach((num, index) => {
+        while (stack.length !== 0 && stack[stack.length - 1] < num) {
+            nextGreaterMap.set(stack.pop(), num);
+        }
+        stack.push(num);
+    });
+
+    let result = [];
+    findNums.forEach((num, index) => {
+        if (nextGreaterMap.has(num)) {
+            result.push(nextGreaterMap.get(num));
+        } else {
+            result.push(-1);
+        }
+    });
+    return result;
+};
+
+const checkStraightLine = (coordinates) => {
+    if (coordinates.length === 2) {
+        return true;
+    }
+
+    const [x0, y0] = coordinates[0];
+    const [x1, y1] = coordinates[1];
+    const deltaX = x1 - x0;
+    const deltaY = y1 - y0;
+
+    for (let i = 2; i < coordinates.length; i++) {
+        const [x, y] = coordinates[i];
+        if (deltaY * (x - x1) !== deltaX * (y - y1)) {
+            return false;
+        }
+    }
+
+    return true;
+};

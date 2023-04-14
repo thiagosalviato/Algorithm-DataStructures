@@ -478,4 +478,36 @@ public class Solution {
         return n == 1;
     }
 
+    public int[] nextGreaterElement(int[] numsToFind, int[] nums) {
+        int[] greaterMap = new int[10001];
+        int[] stack = new int[10001];
+        int top = 0;
+        stack[top++] = Integer.MAX_VALUE;
+        for(int currentNum: nums){
+            while(stack[top-1] < currentNum) {
+                greaterMap[stack[--top]] = currentNum;
+            }
+            stack[top++] = currentNum;
+        }
+        for(int i=0; i<numsToFind.length; i++) {
+            numsToFind[i] = (greaterMap[numsToFind[i]] == 0) ? -1 : greaterMap[numsToFind[i]];
+        }
+        return numsToFind;
+    }
+
+    public boolean checkStraightLine(int[][] coordinates) {
+        int deltaY = coordinates[1][1] - coordinates[0][1];
+        int deltaX = coordinates[1][0] - coordinates[0][0];
+
+        for(int i = 2; i < coordinates.length; i++) {
+            int deltaY2 = coordinates[i][1] - coordinates[i - 1][1];
+            int deltaX2 = coordinates[i][0] - coordinates[i - 1][0];
+
+            if(deltaY * deltaX2 != deltaX * deltaY2) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
