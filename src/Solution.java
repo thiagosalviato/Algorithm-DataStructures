@@ -510,4 +510,28 @@ public class Solution {
         return true;
     }
 
+    public void moveZeroes(int[] nums) {
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                int temp = nums[j];
+                nums[j] = nums[i];
+                nums[i] = temp;
+                j++;
+            }
+        }
+    }
+
+    public int sumOddLengthSubarrays(int[] nums) {
+        int sum = 0;
+        int length = nums.length;
+
+        for (int i = 0; i < length; i++) {
+            int subarrayCount = ((i + 1) * (length - i) + 1) / 2;
+            int subarraySum = nums[i] * subarrayCount;
+            sum += subarraySum;
+        }
+        return sum;
+    }
+
 }

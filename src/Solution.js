@@ -717,3 +717,32 @@ const checkStraightLine = (coordinates) => {
 
     return true;
 };
+
+const moveZeroes = (nums) => {
+    let i = 0;
+    let j = 0;
+
+    while (i < nums.length) {
+        if (nums[i] !== 0) {
+            const temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+            j++;
+        }
+        i++;
+    }
+};
+
+const sumOddLengthSubarrays = (arr) => {
+    let totalSum = 0;
+    for (let startIndex = 0; startIndex < arr.length; startIndex++) {
+        let currentSum = 0;
+        for (let endIndex = startIndex, subarraySize = 1; endIndex < arr.length; endIndex++, subarraySize++) {
+            currentSum += arr[endIndex];
+            if (subarraySize % 2 !== 0) {
+                totalSum += currentSum;
+            }
+        }
+    }
+    return totalSum;
+}
