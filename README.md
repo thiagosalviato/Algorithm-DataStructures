@@ -38,6 +38,12 @@
 
 [283. Move Zeroes](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/Programming%20Skills%20I/Day%206/283.%20Move%20Zeroes.md)
 
+### Day 7
+
+[566. Reshape the Matrix](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/Programming%20Skills%20I/Day%207/566.%20Reshape%20the%20Matrix.md)
+
+[1572. Matrix Diagonal Sum](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/Programming%20Skills%20I/Day%207/1572.%20Matrix%20Diagonal%20Sum.md)
+
 
 ## LeetCode - SQL Study Plan
 
@@ -84,6 +90,12 @@
 [197. Rising Temperature](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%206/197.%20Rising%20Temperature.md)
 
 [607. Sales Person](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%206/607.%20Sales%20Person.md)
+
+### Day 7
+
+[1141. User Activity for the Past 30 Days I](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%207/1141.%20User%20Activity%20for%20the%20Past%2030%20Days%20I.md)
+
+[1693. Daily Leads and Partners](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%207/1693.%20Daily%20Leads%20and%20Partners.md)
 
 ## LeetCode
 
