@@ -1,4 +1,4 @@
-# Algorithm Learning
+# Algorithm, Data Structures and Database Learning
 
 ## LeetCode - Programming Skills I 
 
@@ -43,6 +43,12 @@
 [566. Reshape the Matrix](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/Programming%20Skills%20I/Day%207/566.%20Reshape%20the%20Matrix.md)
 
 [1572. Matrix Diagonal Sum](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/Programming%20Skills%20I/Day%207/1572.%20Matrix%20Diagonal%20Sum.md)
+
+### Day 8
+
+[389. Find the Difference](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/Programming%20Skills%20I/Day%208/389.%20Find%20the%20Difference.md)
+
+[1768. Merge Strings Alternately](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/Programming%20Skills%20I/Day%208/1768.%20Merge%20Strings%20Alternately.md)
 
 
 ## LeetCode - SQL Study Plan
@@ -96,6 +102,12 @@
 [1141. User Activity for the Past 30 Days I](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%207/1141.%20User%20Activity%20for%20the%20Past%2030%20Days%20I.md)
 
 [1693. Daily Leads and Partners](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%207/1693.%20Daily%20Leads%20and%20Partners.md)
+
+### Day 8
+
+[586. Customer Placing the Largest Number of Orders](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%208/586.%20Customer%20Placing%20the%20Largest%20Number%20of%20Orders.md)
+
+[1890. The Latest Login in 2020](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%208/1890.%20The%20Latest%20Login%20in%202020.md)
 
 ## LeetCode
 

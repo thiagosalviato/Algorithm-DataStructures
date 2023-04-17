@@ -757,3 +757,12 @@ const mergeAlternately = (word1, word2) => {
 
     return merged;
 };
+
+const findTheDifference = (s, t) => {
+    let string = t;
+
+    for(let i = 0; i < s.length; i++) {
+        string = string.replace(s[i], '');
+    }
+    return string;
+};
