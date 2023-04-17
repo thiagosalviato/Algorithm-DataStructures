@@ -534,4 +534,14 @@ public class Solution {
         return sum;
     }
 
+    public static String mergeAlternately(String word1, String word2) {
+        StringBuilder merged = new StringBuilder();
+        int maxLength = Math.max(word1.length(), word2.length());
+
+        for (int i = 0; i < maxLength; i++) {
+            merged.append((i < word1.length() ? word1.charAt(i) : ""));
+            merged.append((i < word2.length() ? word2.charAt(i) : ""));
+        }
+        return merged.toString();
+    }
 }
