@@ -50,6 +50,18 @@
 
 [1768. Merge Strings Alternately](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/Programming%20Skills%20I/Day%208/1768.%20Merge%20Strings%20Alternately.md)
 
+### Day 9
+
+[1309. Decrypt String from Alphabet to Integer Mapping](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/Programming%20Skills%20I/Day%209/1309.%20Decrypt%20String%20from%20Alphabet%20to%20Integer%20Mapping.md)
+
+[709. To Lower Case](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/Programming%20Skills%20I/Day%209/709.%20To%20Lower%20Case.md)
+
+### Day 10
+
+[1290. Convert Binary Number in a Linked List to Integer](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/Programming%20Skills%20I/Day%2010/1290.%20Convert%20Binary%20Number%20in%20a%20Linked%20List%20to%20Integer.md)
+
+[876. Middle of the Linked List](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/Programming%20Skills%20I/Day%2010/876.%20Middle%20of%20the%20Linked%20List.md)
+
 
 ## LeetCode - SQL Study Plan
 
@@ -108,6 +120,20 @@
 [586. Customer Placing the Largest Number of Orders](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%208/586.%20Customer%20Placing%20the%20Largest%20Number%20of%20Orders.md)
 
 [1890. The Latest Login in 2020](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%208/1890.%20The%20Latest%20Login%20in%202020.md)
+
+### Day 9
+
+[1158. Market Analysis I](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%209/1158.%20Market%20Analysis%20I.md)
+
+[1407. Top Travellers](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%209/1407.%20Top%20Travellers.md)
+
+### Day 10
+
+[1084. Sales Analysis III](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%2010/1084.%20Sales%20Analysis%20III.md)
+
+[1587. Bank Account Summary II](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%2010/1587.%20Bank%20Account%20Summary%20II.md)
+
+[182. Duplicate Emails](https://github.com/thiagosalviato/Algorithm-DataStructures/blob/main/leet-code/SQL%20-%20Study%20Plan/Day%2010/182.%20Duplicate%20Emails.md)
 
 ## LeetCode
 
