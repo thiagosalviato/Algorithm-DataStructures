@@ -766,3 +766,30 @@ const findTheDifference = (s, t) => {
     }
     return string;
 };
+
+const toLowerCase = (str) => {
+    let result = '';
+    const DIFF = ('a'.charCodeAt(0) - 'A'.charCodeAt(0));
+
+    for (let i = 0; i < str.length; i++) {
+        const charCode = str.charCodeAt(i);
+        if (charCode >= 65 && charCode <= 90) {
+            result += String.fromCharCode(charCode + DIFF);
+        } else {
+            result += str[i];
+        }
+    }
+    return result;
+};
+
+const middleNode = (head) => {
+    let fastPointer = head;
+    let slowPointer = head;
+
+    while (fastPointer !== null && fastPointer.next !== null) {
+        fastPointer = fastPointer.next.next;
+        slowPointer = slowPointer.next;
+    }
+
+    return slowPointer;
+};

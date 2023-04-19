@@ -562,4 +562,18 @@ public class Solution {
         }
         return '\0';
     }
+
+    public String toLowerCase(String s) {
+        return s.toLowerCase();
+    }
+
+    public ListNode middleNode(ListNode head) {
+        ListNode slowPointer = head;
+        ListNode fastPointer = head;
+        while(fastPointer != null && fastPointer.next != null) {
+            fastPointer = fastPointer.next.next;
+            slowPointer = slowPointer.next;
+        }
+        return slowPointer;
+    }
 }
