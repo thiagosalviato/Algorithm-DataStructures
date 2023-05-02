@@ -805,4 +805,11 @@ const containsDuplicate = (nums) => {
     return false;
 };
 
-
+const merge = (nums1, m, nums2, n) => {
+    let position = m + n - 1;
+    m--;
+    n--;
+    while (n >= 0) {
+        nums1[position--] = (nums1[m] > nums2[n]) ? nums1[m--] : nums2[n--];
+    }
+};
