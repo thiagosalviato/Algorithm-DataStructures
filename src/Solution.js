@@ -813,3 +813,37 @@ const merge = (nums1, m, nums2, n) => {
         nums1[position--] = (nums1[m] > nums2[n]) ? nums1[m--] : nums2[n--];
     }
 };
+
+const createHelloWorld = () => {
+    return () => "Hello World";
+};
+
+const createCounter = (n) =>{
+    return function() {
+        return n++;
+    };
+};
+
+const createCounter = (init) => {
+    let value = init;
+    return {
+        increment: () => ++value,
+        decrement: () => --value,
+        reset: () => value = init,
+    }
+};
+
+const map = (arr, fn) => {
+    for (let i = 0; i < arr.length; ++i) {
+        arr[i] = fn(arr[i], i);
+    }
+    return arr;
+};
+
+const map = (arr, fn) => {
+    for (let i = 0; i < arr.length; ++i) {
+        arr[i] = fn(arr[i], i);
+    }
+    return arr;
+};
+
