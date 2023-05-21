@@ -847,3 +847,83 @@ const map = (arr, fn) => {
     return arr;
 };
 
+const once = (fn) => {
+    let result;
+    let used = false;
+
+    return function(...args) {
+        if (!used) {
+            result = fn(...args);
+            used = true;
+            return result;
+        }
+        return undefined;
+    };
+};
+
+function memoize(fn) {
+    const cache = new Map();
+    return function (...args) {
+        const key = args.join(',');
+        if (cache.has(key)) {
+            return cache.get(key);
+        }
+        const result = fn.apply(null, args);
+        cache.set(key, result);
+        return result;
+    };
+}
+
+const curry = (fn) => {
+    const expectedArgsCount = fn.length;
+    return function curried(...args) {
+        if (args.length < expectedArgsCount) {
+            return function (...args2) {
+                return curried(...args, ...args2);
+            };
+        }
+        return fn(...args);
+    };
+};
+
+async function sleep(millis) {
+    await new Promise(resolve => setTimeout(resolve, millis));
+}
+
+const timeLimit = (fn, t) => {
+    return async function(...args) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => reject("Time Limit Exceeded"), t);
+            fn(...args).then(resolve, reject);
+        });
+    }
+};
+
+const promisePool = async (functions, n) => {
+    let next = () => functions[n++]?.().then(next);
+    return Promise.all(functions.slice(0, n).map(f => f().then(next)));
+};
+
+function TimeLimitedCache() {
+    this.cache = {};
+}
+
+TimeLimitedCache.prototype.set = function(key, value, duration) {
+    const valueInCache = this.cache[key];
+    if (valueInCache) {
+        clearTimeout(valueInCache.timeout);
+    }
+    const timeout = setTimeout(() => {
+        delete this.cache[key];
+    }, duration);
+    this.cache[key] = { value, timeout };
+    return valueInCache !== undefined;
+};
+
+TimeLimitedCache.prototype.get = function(key) {
+    return this.cache.hasOwnProperty(key) ? this.cache[key].value : -1;
+};
+
+TimeLimitedCache.prototype.count = function() {
+    return Object.keys(this.cache).length;
+};
